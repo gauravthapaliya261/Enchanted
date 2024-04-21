@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials - Enchanted Threads Boutique</title>
+    <link rel="stylesheet" href="../resources/styles/style.css">
+    <style>
+        /* Additional styles for larger image display */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .overlay img {
+            max-width: 80%;
+            max-height: 80%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <!-- Logo or boutique name -->
+            <img src="../resources/images/logo.jpg" alt="Enchanted Threads Boutique">
+        </div>
+        <div class="business-name">
+            <!-- Business name -->
+            <h1>Enchanted Threads Boutique</h1>
+        </div>
+        <nav>
+            <!-- Navigation menu -->
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="products">
+            <div class="container">
+                <div class="product">
+                    <div class="product-image">
+                        <img src="../resources/images/product1.jpg" alt="Product 1">
+                    </div>
+                    <div class="product-details">
+                        <h2>Product Name</h2>
+                        <p class="price">$XX.XX</p>
+                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus,
+                            tortor et dictum pulvinar, ipsum ante feugiat nunc, non vehicula mi sapien eu ipsum.</p>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="product-image">
+                        <img src="../resources/images/product2.jpg" alt="Product 1">
+                    </div>
+                    <div class="product-details">
+                        <h2>Product Name</h2>
+                        <p class="price">$XX.XX</p>
+                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus,
+                            tortor et dictum pulvinar, ipsum ante feugiat nunc, non vehicula mi sapien eu ipsum.</p>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="product-image">
+                        <img src="../resources/images/product3.jpg" alt="Product 1">
+                    </div>
+                    <div class="product-details">
+                        <h2>Product Name</h2>
+                        <p class="price">$XX.XX</p>
+                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus,
+                            tortor et dictum pulvinar, ipsum ante feugiat nunc, non vehicula mi sapien eu ipsum.</p>
+                    </div>
+                </div>
+                <!-- Repeat the above product card for the second row -->
+                <!-- Repeat the above product card for the third row -->
+            </div>
+        </section>
+
+    </main>
+    <footer>
+        <div class="footer-nav">
+            <ul>
+                <!-- Footer navigation links -->
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="social-media">
+            <!-- Social media icons -->
+            <a href="#"><img src="../resources/images/facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="../resources/images/twitter-icon.png" alt="Twitter"></a>
+            <a href="#"><img src="../resources/images/instagram-icon.png" alt="Instagram"></a>
+        </div>
+        <div class="copyright">
+            <!-- Copyright information -->
+            <p>&copy; 2024 Enchanted Threads Boutique. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Larger image display overlay -->
+    <div class="overlay" id="overlay">
+        <img id="largerImage" src="" alt="Larger Image">
+    </div>
+
+    <script>
+        // Get all product images
+        const productImages = document.querySelectorAll('.product-image img');
+
+        // Loop through each product image
+        productImages.forEach(image => {
+            // Add click event listener
+            image.addEventListener('click', function () {
+                // Get the larger version of the image
+                const largerImageSrc = this.getAttribute('src');
+
+                // Set the larger image source in the overlay
+                const largerImage = document.getElementById('largerImage');
+                largerImage.setAttribute('src', largerImageSrc);
+
+                // Show the overlay
+                const overlay = document.getElementById('overlay');
+                overlay.style.display = 'flex'; // Display the overlay
+            });
+        });
+
+        // Close the overlay when clicked outside the image
+        const overlay = document.getElementById('overlay');
+        overlay.addEventListener('click', function (event) {
+            if (event.target === this) {
+                this.style.display = 'none'; // Hide the overlay
+            }
+        });
+    </script>
+
+</body>
+
+</html>

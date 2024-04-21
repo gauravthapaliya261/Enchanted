@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Enchanted Threads Boutique</title>
+    <link rel="stylesheet" href="../resources/styles/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <!-- Logo or boutique name -->
+            <img src="../resources/images/logo.jpg" alt="Enchanted Threads Boutique">
+        </div>
+        <div class="business-name">
+            <!-- Business name -->
+            <h1>Enchanted Threads Boutique</h1>
+        </div>
+        <nav>
+            <!-- Navigation menu -->
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-info">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <h3>Reach out to us via:</h3>
+                <div class="contact-details">
+                    <div class="contact-section">
+                        <h4>Email</h4>
+                        <p><a href="mailto:info@enchantedthreads.com">info@enchantedthreads.com</a></p>
+                    </div>
+                    <div class="contact-section">
+                        <h4>Phone Number</h4>
+                        <p>(123) 456-7890</p>
+                    </div>
+                </div>
+                <div class="social-media">
+                    <h3>Follow us on our socials:</h3>
+                    <div class="social-cards">
+                        <div class="social-card">
+                            <img src="../resources/images/facebook-icon.png" alt="Facebook">
+                            <p><a href="#">Facebook</a></p>
+                        </div>
+                        <div class="social-card">
+                            <img src="../resources/images/instagram-icon.png" alt="Instagram">
+                            <p><a href="#">Instagram</a></p>
+                        </div>
+                        <div class="social-card">
+                            <img src="../resources/images/twitter-icon.png" alt="Twitter">
+                            <p><a href="#">Twitter</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="contact-form">
+            <div class="container">
+                <h2>Send us a message</h2>
+                <form id="contactForm" action="#" method="POST" novalidate>
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-nav">
+            <ul>
+                <!-- Footer navigation links -->
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="social-media">
+            <!-- Social media icons -->
+            <a href="#"><img src="../resources/images/facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="../resources/images/twitter-icon.png" alt="Twitter"></a>
+            <a href="#"><img src="../resources/images/instagram-icon.png" alt="Instagram"></a>
+        </div>
+        <div class="copyright">
+            <!-- Copyright information -->
+            <p>&copy; 2024 Enchanted Threads Boutique. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const contactForm = document.getElementById("contactForm");
+
+            // Function to handle form submission
+            function handleFormSubmission(event) {
+                event.preventDefault();
+
+                // Perform form validation
+                const name = contactForm.elements["name"].value.trim();
+                const email = contactForm.elements["email"].value.trim();
+                const message = contactForm.elements["message"].value.trim();
+
+                // Check if any field is empty
+                if (!name || !email || !message) {
+                    alert("Please fill in all fields.");
+                    return;
+                }
+
+                // Submit the form (in this example, just display a success message)
+                alert("Your message has been sent successfully!");
+                contactForm.reset();
+            }
+
+            // Attach event listener for form submission
+            contactForm.addEventListener("submit", handleFormSubmission);
+        });
+
+    </script>
+</body>
+
+</html>
